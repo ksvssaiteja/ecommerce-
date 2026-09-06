@@ -1,0 +1,6 @@
+{
+  "name": "Sunitha ShoeMart",
+  "description": "High-performance athletic footwear boutique featuring sneakers, running shoes, and handcrafted leather footwear.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
