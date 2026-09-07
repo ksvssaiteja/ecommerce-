@@ -226,5 +226,35 @@
       "sole": "SpeedTrack Hydrophobic Rubber",
       "weight": "185 grams"
     }
+  },
+  {
+    "id": "hggnnkj",
+    "name": "hggnnkj",
+    "brand": "Sunitha Original",
+    "category": "Chappals",
+    "price": 1,
+    "originalPrice": 2,
+    "rating": 0,
+    "reviewCount": 0,
+    "image": "https://share.google/MBJKl05YklMFNb6z2",
+    "alt": "hggnnkj product image",
+    "description": "New chappals from Sunitha Original.",
+    "sizes": [
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "colors": [
+      "Black",
+      "Brown"
+    ],
+    "specs": {
+      "cushioning": "Everyday comfort footbed",
+      "upper": "Durable crafted material",
+      "sole": "Flexible non-slip outsole",
+      "weight": "Standard fit"
+    }
   }
 ]

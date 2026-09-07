@@ -191,6 +191,13 @@ export default function App() {
     showToast(`${shoe.name} added to catalog`);
   };
 
+  const handleShoeRemoved = (shoeId: string) => {
+    setCatalogShoes((currentShoes) => currentShoes.filter((shoe) => shoe.id !== shoeId));
+    setWishlistIds((currentIds) => currentIds.filter((id) => id !== shoeId));
+    setSelectedShoe((currentShoe) => (currentShoe?.id === shoeId ? null : currentShoe));
+    showToast('Product removed from catalog');
+  };
+
   return (
     <div className="min-h-screen w-full bg-[#f1f4f8] text-[#191c1e] font-body selection:bg-[#ffdada] selection:text-[#920028]">
       <div className="w-full max-w-4xl min-h-screen mx-auto bg-[#f7f9fb] relative flex flex-col shadow-md">
@@ -260,6 +267,7 @@ export default function App() {
               shoes={catalogShoes}
               authToken={user.token}
               onShoeAdded={handleShoeAdded}
+              onShoeRemoved={handleShoeRemoved}
               onSessionExpired={handleLogout}
             />
           )}

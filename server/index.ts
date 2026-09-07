@@ -81,8 +81,12 @@ app.get('/api/shoes', async (_request, response) => {
 
 app.post('/api/shoes', requireAdmin, async (request, response) => {
   const shoe = request.body as Shoe;
-  if (!shoe?.id || !shoe?.name || !shoe?.price || !shoe?.image) {
-    response.status(400).json({ error: 'id, name, price, and image are required' });
+  if (!shoe?.id || !shoe?.name || !Number.isFinite(shoe.price) || shoe.price <= 0 || !shoe?.image) {
+    response.status(400).json({ error: 'id, name, positive price, and image are required' });
+    return;
+  }
+  if (shoe.originalPrice !== undefined && (!Number.isFinite(shoe.originalPrice) || shoe.originalPrice < shoe.price)) {
+    response.status(400).json({ error: 'originalPrice must be greater than or equal to price' });
     return;
   }
 
